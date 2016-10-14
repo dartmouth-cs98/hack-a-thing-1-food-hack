@@ -1,0 +1,25 @@
+$age-select-size: 100px;
+
+
+.age-range-btn {
+    height: $age-select-size;
+    width: $age-select-size;
+    border-radius: $age-select-size;
+    border: 1px solid #000;
+}
+
+.nav-row{
+  width: 100%;
+  display: block;
+
+  .nav-btn {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    margin: 10px auto;
+    border: 1px solid #000;
+  }
+  .selected-category {
+    background-color: #000;
+  }
+}

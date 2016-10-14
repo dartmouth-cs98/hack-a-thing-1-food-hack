@@ -1,23 +1,45 @@
 // index.js
 
-//import React onto the page
+// import React onto the page
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-//add the style sheet onto the page
+// add the style sheet onto the page
 import './style.scss';
 
-//import the Components
+// import the Components
+import AgeSelector from './components/age_selector';
+import DisabilityList from './components/disability_list';
+import NavBar from './components/nav_bar';
 
+// import the activity/category JSON data object from static JS file
+import activityData from '../assets/activity_data';
 
 
 class App extends Component {
   constructor(props) {
     super(props);
+
+    this.activityData = activityData;
+    this.ageRanges = ['K-2', '3-5', '6-8'];
+    this.state = {
+      ageSelected: null,
+      categorySelected: null,
+    };
   }
   render() {
+    if (!this.state.ageSelected) {
+      return (
+        <AgeSelector ageRanges={this.ageRanges} onAgeSelect={ageSelected => this.setState({ ageSelected })} />
+      );
+    }
+
     return (
-      <div>I am the App Component.</div>
+      <div>
+        <p> the selected age range is {this.state.ageSelected} </p>
+        <NavBar categories={this.activityData} catSelected={this.state.categorySelected} onCategorySelect={categorySelected => this.setState({ categorySelected })} />
+        <DisabilityList />
+      </div>
     );
   }
 }
