@@ -1,9 +1,15 @@
 // age_range_item.js
 import React from 'react';
+import { Link } from 'react-router';
 
 const AgeRangeItem = (props) => {
+  const url = '/'.concat(props.ageRange);
   return (
-    <button type="button" id={props.ageRange} className="age-range-btn" onClick={() => props.onAgeSelect(props.ageRange)}> {props.ageRange} </button>
+    <Link to={url}>
+      <div id={props.ageRange} className="age-range-btn">
+        {props.ageRange}
+      </div>
+    </Link>
   );
 };
 

@@ -2,7 +2,8 @@
 
 // import React onto the page
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Router, Route, IndexRoute } from 'react-router';
 
 // add the style sheet onto the page
 import './style.scss';
@@ -60,4 +61,16 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('main'));
+// render(<App />, document.getElementById('main'));
+render((
+  <Router>
+    <Route path="/" component={App}>
+      <IndexRoute component={AgeSelector} />
+      <Route path="/:ageSelected" component={App}>
+        <Route path="/:categorySelected" component={App}>
+          <Route path="/:activitySelected" component={App} />
+        </Route>
+      </Route>
+    </Route>
+  </Router>
+), document.getElementById('main'));
