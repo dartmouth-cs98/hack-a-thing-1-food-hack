@@ -3,15 +3,15 @@ import React from 'react';
 import AgeRangeItem from './age_range_item';
 
 const AgeSelector = (props) => {
-  const rangeButtons = props.ageRanges.map((range) => {
-    return <AgeRangeItem ageRange={range} key={range} onAgeSelect={props.onAgeSelect} />;
-  });
-
   return (
     <div>
-      <p> Please select a grade range: </p>
+      <div className="grade-selection-title">
+        <img src="/assets/grade-title.png" alt="Please select a grade range:" />
+      </div>
       <div className="age-btn-container">
-        {rangeButtons}
+        <AgeRangeItem ageRange="K-2" image="/assets/balloon_k-2.png" onAgeSelect={props.onAgeSelect} />
+        <AgeRangeItem ageRange="3-5" image="/assets/balloon_3-5.png" onAgeSelect={props.onAgeSelect} />
+        <AgeRangeItem ageRange="6-8" image="/assets/balloon_6-8.png" onAgeSelect={props.onAgeSelect} />
       </div>
     </div>
   );

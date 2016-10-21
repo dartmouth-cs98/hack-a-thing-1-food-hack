@@ -32,14 +32,14 @@ class App extends Component {
   render() {
     if (!this.state.ageSelected) {
       return (
-        <div>
+        <div className="app-container">
           <AgeSelector ageRanges={this.ageRanges} onAgeSelect={ageSelected => this.setState({ ageSelected })} />
         </div>
       );
     }
 
     return (
-      <div>
+      <div className="app-container">
         <p> the selected age range is {this.state.ageSelected} </p>
         <NavBar
           categories={this.activityData}
