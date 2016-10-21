@@ -26,6 +26,13 @@ $selected-activity-color: #555;
   @include flex-box;
 }
 
+@mixin flex-space-between {
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  @include flex-box;
+}
+
 
 .age-btn-container {
   width: 100%;
