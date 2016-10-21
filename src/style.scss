@@ -1,25 +1,72 @@
-$age-select-size: 100px;
+// Constants
+$age-select-size: 200px;
+$nav-width: 200px;
 
-
-.age-range-btn {
-    height: $age-select-size;
-    width: $age-select-size;
-    border-radius: $age-select-size;
-    border: 1px solid #000;
+#ageBtnContainer {
+  @extend .flex-space-around;
+  width: 100%;
+  .age-range-btn {
+      height: $age-select-size;
+      width: $age-select-size;
+      border-radius: $age-select-size;
+      border: 1px solid #000;
+  }
 }
 
-.nav-row{
+.nav-row {
+  @extend .flex-space-around;
   width: 100%;
   display: block;
 
   .nav-btn {
-    display: inline-block;
-    width: 20%;
+    width: $nav-width;
     text-align: center;
-    margin: 10px auto;
     border: 1px solid #000;
   }
-  .selected-category {
-    background-color: #000;
+  #selected-category {
+    background-color: #555;
   }
+}
+
+#activityList {
+  @extend .vertical-flex;
+  float: right;
+  li {
+    list-style: none;
+    cursor: pointer;
+    border: 1px solid #000;
+    width: $nav-width;
+    text-align: center;
+    height: 2.5em;
+    vertical-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+// Generic Stylings to be Extended
+
+.flex-box {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+}
+
+.vertical-flex {
+  @extend .flex-box;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+}
+
+.flex-space-around {
+  @extend .flex-box;
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
 }

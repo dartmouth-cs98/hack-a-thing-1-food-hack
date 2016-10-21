@@ -10,7 +10,9 @@ const AgeSelector = (props) => {
   return (
     <div>
       <p> Please select a grade range: </p>
-      {rangeButtons}
+      <div id="ageBtnContainer">
+        {rangeButtons}
+      </div>
     </div>
   );
 };
