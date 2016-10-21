@@ -1,15 +1,26 @@
 // disability_list.js
-import React, { Component } from 'react';
+import React from 'react';
+import DisabilityListItem from './disability_list_item';
 
-class DisabilityList extends Component {
-  constructor(props) {
-    super(props);
+const DisabilityList = (props) => {
+  if (!props.categorySelected) {
+    return <div className="hidden" />;
   }
-  render() {
+  const listItems = props.categorySelected.disabilities.map((disability) => {
     return (
-      <div> I am the disability list within a category.</div>
+      <DisabilityListItem
+        key={disability}
+        activitySelected={props.activitySelected}
+        onActivitySelect={props.onActivitySelect}
+        disability={disability}
+      />
     );
-  }
-}
+  });
+  return (
+    <ul id="activityList">
+      {listItems}
+    </ul>
+  );
+};
 
 export default DisabilityList;
