@@ -11,6 +11,7 @@ import './style.scss';
 import AgeSelector from './components/age_selector';
 import DisabilityList from './components/disability_list';
 import NavBar from './components/nav_bar';
+import ActivityView from './components/activity_view';
 
 // import the activity/category JSON data object from static JS file
 import activityData from '../assets/activity_data';
@@ -25,20 +26,35 @@ class App extends Component {
     this.state = {
       ageSelected: null,
       categorySelected: null,
+      activitySelected: null,
     };
   }
   render() {
     if (!this.state.ageSelected) {
       return (
-        <AgeSelector ageRanges={this.ageRanges} onAgeSelect={ageSelected => this.setState({ ageSelected })} />
+        <div>
+          <AgeSelector ageRanges={this.ageRanges} onAgeSelect={ageSelected => this.setState({ ageSelected })} />
+        </div>
       );
     }
 
     return (
       <div>
         <p> the selected age range is {this.state.ageSelected} </p>
-        <NavBar categories={this.activityData} catSelected={this.state.categorySelected} onCategorySelect={categorySelected => this.setState({ categorySelected })} />
-        <DisabilityList />
+        <NavBar
+          categories={this.activityData}
+          catSelected={this.state.categorySelected}
+          onCategorySelect={categorySelected => this.setState({ categorySelected })}
+        />
+        <ActivityView
+          categorySelected={this.state.categorySelected}
+          activitySelected={this.state.activitySelected}
+        />
+        <DisabilityList
+          categorySelected={this.state.categorySelected}
+          activitySelected={this.state.activitySelected}
+          onActivitySelect={activitySelected => this.setState({ activitySelected })}
+        />
       </div>
     );
   }
