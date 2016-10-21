@@ -44,7 +44,7 @@ class App extends Component {
         <NavBar
           categories={this.activityData}
           catSelected={this.state.categorySelected}
-          onCategorySelect={categorySelected => this.setState({ categorySelected })}
+          onCategorySelect={categorySelected => this.setState({ categorySelected: categorySelected, activitySelected: null })}
         />
         <ActivityView
           categorySelected={this.state.categorySelected}
