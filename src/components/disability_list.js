@@ -17,7 +17,7 @@ const DisabilityList = (props) => {
     );
   });
   return (
-    <ul id="activityList">
+    <ul className="activity-list">
       {listItems}
     </ul>
   );

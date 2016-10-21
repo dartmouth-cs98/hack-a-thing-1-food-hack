@@ -2,7 +2,7 @@
 import React from 'react';
 
 const DisabilityListItem = (props) => {
-  const currentClass = (props.activitySelected === props.disability) ? 'selectedActivity' : 'activityItem';
+  const currentClass = (props.activitySelected === props.disability) ? 'selected-activity activity-item' : 'activity-item';
   return (
     <li className={currentClass} onClick={() => props.onActivitySelect(props.disability)}>
       {props.disability}

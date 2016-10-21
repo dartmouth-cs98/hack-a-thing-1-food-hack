@@ -9,14 +9,14 @@ const NavBar = (props) => {
   });
 
   return (
-    <div id="nav-bar">
-      <div id="top-nav" className="nav-row">
+    <div className="nav-bar">
+      <div className="top-nav nav-row">
         {categoryButtons[0]}
         {categoryButtons[1]}
         {categoryButtons[2]}
         {categoryButtons[3]}
       </div>
-      <div id="bottom-nav" className="nav-row">
+      <div className="bottom-nav nav-row">
         {categoryButtons[4]}
         {categoryButtons[5]}
         {categoryButtons[6]}

@@ -2,14 +2,9 @@
 import React from 'react';
 
 const NavCategoryItem = (props) => {
-  // console.log(props.category.id + ', ' + props.catSelected);
-  if (!props.catSelected || props.category.id !== props.catSelected.id) {
-    return (
-      <div className="nav-btn" onClick={() => props.onCategorySelect(props.category)}> {props.category.name} </div>
-    );
-  }
+  const currentClass = (props.catSelected && props.category.id === props.catSelected.id) ? 'selected-category nav-btn' : 'nav-btn';
   return (
-    <div id="selected-category" className="nav-btn" onClick={() => props.onCategorySelect(props.category)}> {props.category.name} </div>
+    <div className={currentClass} onClick={() => props.onCategorySelect(props.category)}> {props.category.name} </div>
   );
 };
 

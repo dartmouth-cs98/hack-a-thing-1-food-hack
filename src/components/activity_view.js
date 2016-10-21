@@ -11,11 +11,11 @@ class ActivityView extends Component {
   render() {
     if (!this.props.categorySelected) {
       return (
-        <div className="categoryNotSelected"> {this.chooseCategoryText} </div>
+        <div className="category-not-selected"> {this.chooseCategoryText} </div>
       );
     } else if (!this.props.activitySelected) {
       return (
-        <div className="activityNotSelected"> {this.chooseActivityText} </div>
+        <div className="activity-not-selected"> {this.chooseActivityText} </div>
       );
     }
     console.log('selectedCategory:');
@@ -23,7 +23,7 @@ class ActivityView extends Component {
     console.log('selected activity: ');
     console.log(this.props.activitySelected);
     return (
-      <div className="activityBox">
+      <div className="activity-box">
         This will be an activity.
       </div>
     );

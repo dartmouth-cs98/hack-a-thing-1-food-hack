@@ -1,72 +1,79 @@
 // Constants
 $age-select-size: 200px;
 $nav-width: 200px;
-
-#ageBtnContainer {
-  @extend .flex-space-around;
-  width: 100%;
-  .age-range-btn {
-      height: $age-select-size;
-      width: $age-select-size;
-      border-radius: $age-select-size;
-      border: 1px solid #000;
-  }
-}
-
-.nav-row {
-  @extend .flex-space-around;
-  width: 100%;
-  display: block;
-
-  .nav-btn {
-    width: $nav-width;
-    text-align: center;
-    border: 1px solid #000;
-  }
-  #selected-category {
-    background-color: #555;
-  }
-}
-
-#activityList {
-  @extend .vertical-flex;
-  float: right;
-  li {
-    list-style: none;
-    cursor: pointer;
-    border: 1px solid #000;
-    width: $nav-width;
-    text-align: center;
-    height: 2.5em;
-    vertical-align: center;
-  }
-}
+$selected-category-color: #555;
+$selected-activity-color: #555;
 
 
-
-
-
-
-
-
-// Generic Stylings to be Extended
-
-.flex-box {
+// Mixins
+@mixin flex-box {
   display: flex;
   display: -webkit-flex;
   display: -moz-flex;
 }
 
-.vertical-flex {
-  @extend .flex-box;
+@mixin vertical-flex {
   flex-direction: column;
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
+  @include flex-box;
 }
 
-.flex-space-around {
-  @extend .flex-box;
+@mixin flex-space-around {
   justify-content: space-around;
   -webkit-justify-content: space-around;
   -moz-justify-content: space-around;
+  @include flex-box;
+}
+
+
+.age-btn-container {
+  width: 100%;
+  @include flex-space-around;
+}
+
+.age-range-btn {
+  height: $age-select-size;
+  width: $age-select-size;
+  border-radius: $age-select-size;
+  border: 1px solid #000;
+}
+
+.nav-row {
+  width: 100%;
+  display: block;
+  @include flex-space-around;
+}
+
+.nav-btn {
+  width: $nav-width;
+  text-align: center;
+  border: 1px solid #000;
+}
+
+.selected-category {
+  background-color: $selected-category-color;
+}
+
+.activity-list {
+  float: right;
+  @include vertical-flex;
+}
+
+.activity-item {
+  list-style: none;
+  cursor: pointer;
+  border: 1px solid #000;
+  width: $nav-width;
+  text-align: center;
+  height: 2.5em;
+  vertical-align: center;
+}
+
+.selected-activity {
+  background-color: $selected-activity-color;
+} 
+
+.hidden {
+  display: none;
 }
