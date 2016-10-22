@@ -1,5 +1,5 @@
 // Constants
-$age-select-size: 200px;
+$grade-select-size: 200px;
 $nav-width: 200px;
 $selected-category-color: #555;
 $selected-activity-color: #555;
@@ -56,13 +56,13 @@ html, body, #main {
   text-align: center;
 }
 
-.age-btn-container {
+.grade-btn-container {
   width: 100%;
   @include flex-space-around;
 }
 
-.age-range-img {
-  width: $age-select-size;
+.grade-range-img {
+  width: $grade-select-size;
 }
 
 .nav-row {

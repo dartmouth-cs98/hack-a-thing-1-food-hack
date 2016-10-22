@@ -8,7 +8,7 @@ import ReactDOM from 'react-dom';
 import './style.scss';
 
 // import the Components
-import AgeSelector from './components/age_selector';
+import GradeSelector from './components/grade_selector';
 import DisabilityList from './components/disability_list';
 import NavBar from './components/nav_bar';
 import ActivityView from './components/activity_view';
@@ -22,25 +22,25 @@ class App extends Component {
     super(props);
 
     this.activityData = activityData;
-    this.ageRanges = ['K-2', '3-5', '6-8'];
+    this.gradeRanges = ['K-2', '3-5', '6-8'];
     this.state = {
-      ageSelected: null,
+      gradeSelected: null,
       categorySelected: null,
       activitySelected: null,
     };
   }
   render() {
-    if (!this.state.ageSelected) {
+    if (!this.state.gradeSelected) {
       return (
         <div className="app-container">
-          <AgeSelector ageRanges={this.ageRanges} onAgeSelect={ageSelected => this.setState({ ageSelected })} />
+          <GradeSelector gradeRanges={this.gradeRanges} onGradeSelect={gradeSelected => this.setState({ gradeSelected })} />
         </div>
       );
     }
 
     return (
       <div className="app-container">
-        <p> the selected age range is {this.state.ageSelected} </p>
+        <p> the selected grade range is {this.state.gradeSelected} </p>
         <NavBar
           categories={this.activityData}
           catSelected={this.state.categorySelected}
