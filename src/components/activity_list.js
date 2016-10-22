@@ -1,18 +1,18 @@
-// disability_list.js
+// activity_list.js
 import React from 'react';
-import DisabilityListItem from './disability_list_item';
+import ActivityListItem from './activity_list_item';
 
-const DisabilityList = (props) => {
+const ActivityList = (props) => {
   if (!props.categorySelected) {
     return <div className="hidden" />;
   }
-  const listItems = props.categorySelected.disabilities.map((disability) => {
+  const listItems = props.categorySelected.activities.map((activity) => {
     return (
-      <DisabilityListItem
-        key={disability}
+      <ActivityListItem
+        key={activity}
         activitySelected={props.activitySelected}
         onActivitySelect={props.onActivitySelect}
-        disability={disability}
+        activity={activity}
       />
     );
   });
@@ -23,4 +23,4 @@ const DisabilityList = (props) => {
   );
 };
 
-export default DisabilityList;
+export default ActivityList;

@@ -9,8 +9,8 @@ import { Router, Route, IndexRoute } from 'react-router';
 import './style.scss';
 
 // import the Components
-import AgeSelector from './components/age_selector';
-import DisabilityList from './components/disability_list';
+import GradeSelector from './components/grade_selector';
+import ActivityList from './components/activity_list';
 import NavBar from './components/nav_bar';
 import ActivityView from './components/activity_view';
 
@@ -23,25 +23,25 @@ class App extends Component {
     super(props);
 
     this.activityData = activityData;
-    this.ageRanges = ['K-2', '3-5', '6-8'];
+    this.gradeRanges = ['K-2', '3-5', '6-8'];
     this.state = {
-      ageSelected: null,
+      gradeSelected: null,
       categorySelected: null,
       activitySelected: null,
     };
   }
   render() {
-    if (!this.state.ageSelected) {
+    if (!this.state.gradeSelected) {
       return (
-        <div>
-          <AgeSelector ageRanges={this.ageRanges} onAgeSelect={ageSelected => this.setState({ ageSelected })} />
+        <div className="app-container">
+          <GradeSelector gradeRanges={this.gradeRanges} onGradeSelect={gradeSelected => this.setState({ gradeSelected })} />
         </div>
       );
     }
 
     return (
-      <div>
-        <p> the selected age range is {this.state.ageSelected} </p>
+      <div className="app-container">
+        <p> the selected grade range is {this.state.gradeSelected} </p>
         <NavBar
           categories={this.activityData}
           catSelected={this.state.categorySelected}
@@ -51,7 +51,7 @@ class App extends Component {
           categorySelected={this.state.categorySelected}
           activitySelected={this.state.activitySelected}
         />
-        <DisabilityList
+        <ActivityList
           categorySelected={this.state.categorySelected}
           activitySelected={this.state.activitySelected}
           onActivitySelect={activitySelected => this.setState({ activitySelected })}

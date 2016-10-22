@@ -2,7 +2,7 @@ const activityData = [
   {
     name: 'Autism',
     id: 1,
-    disabilities: [
+    activities: [
       'Aspergers',
       'PDD\'s',
       'Austism Spectrum',
@@ -11,7 +11,7 @@ const activityData = [
   {
     name: 'Hearing Loss/Deafness',
     id: 2,
-    disabilities: [
+    activities: [
       'Deafness',
       'Hearing Impaired',
       'Deaf as a result of illness',
@@ -21,7 +21,7 @@ const activityData = [
   {
     name: 'Visual Impairments/Blindness',
     id: 3,
-    disabilities: [
+    activities: [
       'Color Blindness',
       'Glaucoma',
       'Blindness as a result of age',
@@ -33,7 +33,7 @@ const activityData = [
   {
     name: 'Learning Disabilities',
     id: 4,
-    disabilities: [
+    activities: [
       'ADD/ADHD',
       'Dyslexia',
       'Memory Processing',
@@ -44,7 +44,7 @@ const activityData = [
   {
     name: 'Physical Disabilities',
     id: 5,
-    disabilities: [
+    activities: [
       'Cerebral Palsy',
       'Disability from an injury',
       'Amputation',
@@ -57,7 +57,7 @@ const activityData = [
   {
     name: 'Social/Emotional Disabilities',
     id: 6,
-    disabilities: [
+    activities: [
       'EBD',
       'Post Traumatic Stress Disorder (PTSD)',
       'OCC',
@@ -68,7 +68,7 @@ const activityData = [
   {
     name: 'Speech and Language',
     id: 7,
-    disabilities: [
+    activities: [
       'Speech Delay',
       'Speech Impediment',
       'Lisp',
@@ -79,7 +79,7 @@ const activityData = [
   {
     name: 'Cognitive Development',
     id: 8,
-    disabilities: [
+    activities: [
       'Downs Syndrome',
       'Fetal Alcohol Syndrome',
       'Developmental Delay',

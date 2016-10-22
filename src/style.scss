@@ -1,9 +1,15 @@
 // Constants
-$age-select-size: 200px;
+$grade-select-size: 200px;
 $nav-width: 200px;
 $selected-category-color: #555;
 $selected-activity-color: #555;
 
+//Imports
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+
+body {
+  font-family: 'Quicksand', sans-serif;
+}
 
 // Mixins
 @mixin flex-box {
@@ -33,17 +39,30 @@ $selected-activity-color: #555;
   @include flex-box;
 }
 
+html, body, #main {
+  margin: 0;
+  padding: 0;
+  height: 100%; 
+}
 
-.age-btn-container {
+.app-container {
+  background-image: url('/assets/background-sky.png');
+  background-size: cover;
+  height: 100%;
+  padding: 20px;
+}
+
+.grade-selection-title {
+  text-align: center;
+}
+
+.grade-btn-container {
   width: 100%;
   @include flex-space-around;
 }
 
-.age-range-btn {
-  height: $age-select-size;
-  width: $age-select-size;
-  border-radius: $age-select-size;
-  border: 1px solid #000;
+.grade-range-img {
+  width: $grade-select-size;
 }
 
 .nav-row {
