@@ -9,7 +9,7 @@ import './style.scss';
 
 // import the Components
 import GradeSelector from './components/grade_selector';
-import DisabilityList from './components/disability_list';
+import ActivityList from './components/activity_list';
 import NavBar from './components/nav_bar';
 import ActivityView from './components/activity_view';
 
@@ -50,7 +50,7 @@ class App extends Component {
           categorySelected={this.state.categorySelected}
           activitySelected={this.state.activitySelected}
         />
-        <DisabilityList
+        <ActivityList
           categorySelected={this.state.categorySelected}
           activitySelected={this.state.activitySelected}
           onActivitySelect={activitySelected => this.setState({ activitySelected })}
