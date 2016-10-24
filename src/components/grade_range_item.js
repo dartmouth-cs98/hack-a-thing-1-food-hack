@@ -6,7 +6,7 @@ const GradeRangeItem = (props) => {
   const url = '/'.concat(props.gradeRange);
   return (
     <Link to={url} id={props.gradeRange} className="grade-range-btn" >
-      <img className="grade-range-img" src={props.image} alt={props.gradeRange} onClick={() => props.onGradeSelect(props.gradeRange)} />
+      <img className="grade-range-img" src={props.image} alt={props.gradeRange} />
     </Link>
   );
 };

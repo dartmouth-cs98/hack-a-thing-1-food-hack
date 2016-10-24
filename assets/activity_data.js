@@ -1,16 +1,16 @@
-const activityData = [
-  {
+const activityData = {
+  autism: {
     name: 'Autism',
-    id: 1,
+    id: 'autism',
     activities: [
       'Aspergers',
       'PDD\'s',
       'Austism Spectrum',
     ],
   },
-  {
+  hearing: {
     name: 'Hearing Loss/Deafness',
-    id: 2,
+    id: 'hearing',
     activities: [
       'Deafness',
       'Hearing Impaired',
@@ -18,9 +18,9 @@ const activityData = [
       'Deaf as a result of age',
     ],
   },
-  {
+  visual: {
     name: 'Visual Impairments/Blindness',
-    id: 3,
+    id: 'visual',
     activities: [
       'Color Blindness',
       'Glaucoma',
@@ -30,9 +30,9 @@ const activityData = [
       'Near Sightedness',
     ],
   },
-  {
+  learning: {
     name: 'Learning Disabilities',
-    id: 4,
+    id: 'learning',
     activities: [
       'ADD/ADHD',
       'Dyslexia',
@@ -41,9 +41,9 @@ const activityData = [
       'Dysgraphia',
     ],
   },
-  {
+  physical: {
     name: 'Physical Disabilities',
-    id: 5,
+    id: 'physical',
     activities: [
       'Cerebral Palsy',
       'Disability from an injury',
@@ -54,9 +54,9 @@ const activityData = [
       'Birth Defect',
     ],
   },
-  {
+  social: {
     name: 'Social/Emotional Disabilities',
-    id: 6,
+    id: 'social',
     activities: [
       'EBD',
       'Post Traumatic Stress Disorder (PTSD)',
@@ -65,9 +65,9 @@ const activityData = [
       'Depression',
     ],
   },
-  {
+  speech: {
     name: 'Speech and Language',
-    id: 7,
+    id: 'speech',
     activities: [
       'Speech Delay',
       'Speech Impediment',
@@ -76,9 +76,9 @@ const activityData = [
       'Articulation challenge',
     ],
   },
-  {
+  cognitive: {
     name: 'Cognitive Development',
-    id: 8,
+    id: 'cognitive',
     activities: [
       'Downs Syndrome',
       'Fetal Alcohol Syndrome',
@@ -87,7 +87,7 @@ const activityData = [
       'Dyspraxia',
     ],
   },
-];
+};
 
 
 export default activityData;

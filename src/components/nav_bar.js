@@ -4,8 +4,23 @@ import NavCategoryItem from './nav_category_item';
 
 const NavBar = (props) => {
   // console.log(props);
-  const categoryButtons = props.categories.map((category) => {
-    return <NavCategoryItem category={category} catSelected={props.catSelected} key={category.name} onCategorySelect={props.onCategorySelect} />;
+  let keys = [];
+  let key = '';
+  for (key in props.categories) {
+    if (props.categories.hasOwnProperty(key)) {
+      keys = keys.concat(key);
+    }
+  }
+  const categoryButtons = keys.map((key) => {
+    const category = props.categories[key];
+    return (
+      <NavCategoryItem
+        category={category}
+        categorySelected={props.categorySelected}
+        key={category.name}
+        gradeSelected={props.gradeSelected}
+      />
+    );
   });
 
   return (
