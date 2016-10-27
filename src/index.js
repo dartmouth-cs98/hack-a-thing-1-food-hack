@@ -1,7 +1,7 @@
 // index.js
 
 // import React onto the page
-import React, { Component } from 'react';
+import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
@@ -13,19 +13,13 @@ import GradeSelector from './components/grade_selector';
 import Home from './components/home';
 
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div className="app-container">
-        {this.props.children}
-      </div>
-    );
-  }
-}
+const App = (props) => {
+  return (
+    <div className="app-container">
+      {this.props.children}
+    </div>
+  );
+};
 
 // render(<App />, document.getElementById('main'));
 render((

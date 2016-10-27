@@ -3,15 +3,7 @@ import React from 'react';
 import NavCategoryItem from './nav_category_item';
 
 const NavBar = (props) => {
-  // console.log(props);
-  let keys = [];
-  let key = '';
-  for (key in props.categories) {
-    if (props.categories.hasOwnProperty(key)) {
-      keys = keys.concat(key);
-    }
-  }
-  const categoryButtons = keys.map((key) => {
+  const categoryButtons = Object.keys(props.categories).map((key) => {
     const category = props.categories[key];
     return (
       <NavCategoryItem

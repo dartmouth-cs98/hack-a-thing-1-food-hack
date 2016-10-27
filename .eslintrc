@@ -30,9 +30,11 @@
         react/prop-types: 0,
         react/jsx-first-prop-new-line: 0,
         react/jsx-filename-extension: [1, { "extensions": [".js", ".jsx"] }],
+        jsx-a11y/no-static-element-interactions: 0
     },
     plugins: [
-        "react"
+        "react",
+        "jsx-a11y"
     ],
     ecmaFeatures: {
         jsx: true,
