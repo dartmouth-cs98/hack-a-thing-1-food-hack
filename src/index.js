@@ -16,7 +16,7 @@ import Home from './components/home';
 const App = (props) => {
   return (
     <div className="app-container">
-      {this.props.children}
+      {props.children}
     </div>
   );
 };
