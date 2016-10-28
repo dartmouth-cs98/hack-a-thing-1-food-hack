@@ -20,10 +20,10 @@ class Home extends Component {
   render() {
     const gradeSelected = this.props.params.gradeSelected;
     const categorySelected = this.activityData[this.props.params.categoryId];
-    const activitySelected = this.props.params.activitySelected;
+    const activityId = (this.props.routes.length !== 3) ? null : (!this.props.params.splat) ? this.props.routes[2].path : this.props.params.splat;
+    const activitySelected = (!categorySelected) ? null : categorySelected.activities[activityId];
     return (
       <div className="home-container">
-        <p> the selected grade range is {gradeSelected} </p>
         <NavBar
           gradeSelected={gradeSelected}
           categories={this.activityData}
@@ -39,6 +39,7 @@ class Home extends Component {
           categorySelected={categorySelected}
           activitySelected={activitySelected}
         />
+        {this.props.children}
       </div>
     );
   }
