@@ -1,5 +1,4 @@
 // Constants
-$grade-select-size: 200px;
 $nav-width: 200px;
 $selected-category-color: #555;
 $selected-activity-color: #555;
@@ -67,8 +66,12 @@ body {
   @include flex-space-around;
 }
 
+.grade-range-btn {
+  width: 20%;
+}
+
 .grade-range-img {
-  width: $grade-select-size;
+  width: 100%;
 }
 
 .nav-row {
@@ -87,8 +90,14 @@ body {
   background-color: $selected-category-color;
 }
 
+.activity-view {
+  display: inline-block;
+}
+
 .activity-list {
   float: right;
+  width: 200px;
+  padding: none;
   @include vertical-flex;
 }
 
