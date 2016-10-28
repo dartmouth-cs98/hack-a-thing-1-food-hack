@@ -11,7 +11,8 @@ const ActivityList = (props) => {
       <ActivityListItem
         key={activity}
         activitySelected={props.activitySelected}
-        onActivitySelect={props.onActivitySelect}
+        categorySelected={props.categorySelected}
+        gradeSelected={props.gradeSelected}
         activity={activity}
       />
     );

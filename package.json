@@ -4,13 +4,14 @@
   "description": "An interactive set of activities to help elementary and middle school children experience what it is like to have a disability",
   "main": "src/index.js",
   "scripts": {
-    "start": "node_modules/.bin/webpack-dev-server --inline --hot --port 3000",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --inline --hot --port 3000 --history-api-fallback",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/"
   },
   "author": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dali-lab/changing-perspectives.git"
+    "url": "git+https://github.com/dali-lab/changing-perspectives.git"
   },
   "license": "ISC",
   "devDependencies": {
@@ -35,11 +36,13 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
-    "axios": "^0.15.0",
     "jquery": "^3.1.1",
-    "lodash.debounce": "^4.0.8",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-router": "^2.8.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/dali-lab/changing-perspectives/issues"
+  },
+  "homepage": "https://github.com/dali-lab/changing-perspectives#readme"
 }
