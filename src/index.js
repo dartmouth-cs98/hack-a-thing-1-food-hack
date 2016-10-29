@@ -4,7 +4,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import * as activities from './components/activities/all_activities';
+import * as activities from './activities/all_activities';
 
 // add the style sheet onto the page
 import './style.scss';

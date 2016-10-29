@@ -1,5 +1,5 @@
 // Constants
-$nav-width: 200px;
+$nav-width: 20%;
 $selected-category-color: #555;
 $selected-activity-color: #555;
 
@@ -92,12 +92,13 @@ body {
 
 .activity-view {
   display: inline-block;
+  width: 100% - $nav-width;
 }
 
 .activity-list {
   float: right;
-  width: 200px;
-  padding: none;
+  width: $nav-width;
+  padding: 0;
   @include vertical-flex;
 }
 
@@ -105,7 +106,7 @@ body {
   list-style: none;
   cursor: pointer;
   border: 1px solid #000;
-  width: $nav-width;
+  width: 100%;
   text-align: center;
   height: 2.5em;
   vertical-align: center;
