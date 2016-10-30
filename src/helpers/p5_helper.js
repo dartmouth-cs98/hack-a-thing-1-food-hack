@@ -4,7 +4,8 @@ const width = 300;
 const strokeWeight = 10;
 
 
-export function drawingCanvas(p) {
+export function drawingCanvas(p5) {
+  const p = p5;
   let x, y;
 
   p.setup = () => {
@@ -13,12 +14,12 @@ export function drawingCanvas(p) {
 
   p.draw = () => {
     p.background(255);
-    p.text('normal mode', p.width/2, 10);
+    p.text('normal mode', p.width / 2, 10);
     p.stroke(0);
     p.strokeWeight(strokeWeight);
     p.noLoop();
   };
-  
+
   p.mousePressed = () => {
     x = p.mouseX;
     y = p.mouseY;
@@ -33,10 +34,11 @@ export function drawingCanvas(p) {
   p.windowResized = () => {
     p.resizeCanvas(p.windowWidth * 0.35, height);
   };
-};
+}
 
-export function shakyCanvas(p) {
-  let x, y, true_x, true_y;
+export function shakyCanvas(p5) {
+  const p = p5;
+  let x, y, trueX, trueY;
 
   p.setup = () => {
     p.createCanvas(p.windowWidth * 0.35, height);
@@ -54,23 +56,23 @@ export function shakyCanvas(p) {
   p.mousePressed = () => {
     x = p.mouseX;
     y = p.mouseY;
-    true_x = p.mouseX;
-    true_y = p.mouseY;
+    trueX = p.mouseX;
+    trueY = p.mouseY;
   };
 
   p.mouseDragged = () => {
-    if (( p.mouseY - true_y > 15 ) || ( true_y - p.mouseY > 15)) {
-      const x_shift = p.random(-25, 25);
-      const y_shift = p.random(-15, 15);
-      p.line(x, y, p.mouseX + x_shift, p.mouseY + y_shift);
-      x = p.mouseX + x_shift;
-      y = p.mouseY + y_shift;
-      true_x = p.mouseX;
-      true_y = p.mouseY;
+    if ((p.mouseY - trueY > 15) || (trueY - p.mouseY > 15)) {
+      const xShift = p.random(-25, 25);
+      const yShift = p.random(-15, 15);
+      p.line(x, y, p.mouseX + xShift, p.mouseY + yShift);
+      x = p.mouseX + xShift;
+      y = p.mouseY + yShift;
+      trueX = p.mouseX;
+      trueY = p.mouseY;
     }
   };
 
   p.windowResized = () => {
     p.resizeCanvas(p.windowWidth * 0.35, height);
   };
-};
+}
