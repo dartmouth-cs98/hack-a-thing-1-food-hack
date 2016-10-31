@@ -1,10 +1,10 @@
 // canvas_draw.js
 
-//imports
+// Imports
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
+import P5 from 'p5';
 import { drawingCanvas, shakyCanvas } from '../helpers/p5_helper';
-import p5 from 'p5';
 
 
 class CanvasDraw extends Component {
@@ -16,17 +16,18 @@ class CanvasDraw extends Component {
     };
     this.canvas = null;
   }
-  componentDidMount(){
+  componentDidMount() {
     this.canvas = findDOMNode(this);
     console.log(this.canvas.getBoundingClientRect());
-    const normalP5 = new p5(drawingCanvas, this.canvas);
-    const shakyP5 = new p5(shakyCanvas, this.canvas);
+    const normalP5 = new P5(drawingCanvas, this.canvas);
+    const shakyP5 = new P5(shakyCanvas, this.canvas);
+    console.log(normalP5, shakyP5);
   }
-  handleMouseMove(e){
+  handleMouseMove(e) {
     this.setState({});
   }
   render() {
-    return(
+    return (
       <div className="activity-view" id="canvas-draw" />
     );
   }
