@@ -28,7 +28,6 @@ class Home extends Component {
           gradeSelected={gradeSelected}
           categories={this.activityData}
           categorySelected={categorySelected}
-          // onCategorySelect={categorySelected => this.setState({ categorySelected, activitySelected: null })}
         />
         <ActivityView
           gradeSelected={gradeSelected}
@@ -39,7 +38,6 @@ class Home extends Component {
           gradeSelected={gradeSelected}
           categorySelected={categorySelected}
           activitySelected={activitySelected}
-          // onActivitySelect={activitySelected => this.setState({ activitySelected })}
         />
       </div>
     );
