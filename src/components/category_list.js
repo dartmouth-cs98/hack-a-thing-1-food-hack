@@ -1,4 +1,4 @@
-// nav_bar.js
+// category_list.js
 import React from 'react';
 import CategoryListItem from './category_list_item';
 
