@@ -11,11 +11,13 @@ import './style.scss';
 // import the Components
 import GradeSelector from './components/grade_selector';
 import Home from './components/home';
+import NavBar from './components/nav_bar';
 
 
 const App = (props) => {
   return (
     <div className="app-container">
+      <NavBar />
       {props.children}
     </div>
   );

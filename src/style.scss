@@ -1,6 +1,8 @@
 // Constants
 $grade-select-size: 200px;
 $cat-width: 200px;
+$nav-bar-width: 80px;
+$menu_spacing: 50px;
 $selected-category-color: #555;
 $selected-activity-color: #555;
 
@@ -46,6 +48,33 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
+.menu-btn {
+  color: white;
+  text-decoration: none;
+  font-family: 'Quicksand';
+  display: inline-block;
+  padding-right: $menu_spacing;
+}
+
+.menu-btn:active{
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+  display: inline-block;
+}
+
+.menu-btn:hover{
+  color: #f1f1f1;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.menu_container {
+  float: right;
+  margin-top: $nav-bar-width/2.55;
+}
+
 .app-container {
   background-image: url('/assets/grade_selection/Grade_Selection_UI_background.png');
   background-size: cover;
@@ -62,6 +91,12 @@ body {
   }
 }
 
+.nav_container {
+  height: $nav-bar-width;
+  width: 100%;
+  background-color: transparent;
+}
+
 .grade-btn-container {
   width: 100%;
   @include flex-space-around;
@@ -69,6 +104,20 @@ body {
 
 .grade-range-img {
   width: $grade-select-size;
+}
+
+.login-img {
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.login-btn{
+  float: right;
+  margin-top: $nav-bar-width/6;
+  margin-right: 50px;
 }
 
 .cat-row {
