@@ -24,7 +24,6 @@ class Home extends Component {
     const activitySelected = (!categorySelected) ? null : categorySelected.activities[activityId];
     return (
       <div className="home-container">
-        <p> the selected grade range is {gradeSelected} </p>
         <CategoryList
           gradeSelected={gradeSelected}
           categories={this.activityData}

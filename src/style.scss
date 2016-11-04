@@ -1,6 +1,6 @@
 // Constants
 $grade-select-size: 200px;
-$cat-width: 200px;
+$cat-width: 20%;
 $selected-category-color: #555;
 $selected-activity-color: #555;
 
@@ -93,12 +93,12 @@ body {
 
 .activity-view {
   display: inline-block;
-  width: 100% - $nav-width;
+  width: 100% - $cat-width;
 }
 
 .activity-list {
   float: right;
-  width: $nav-width;
+  width: $cat-width;
   padding: 0;
   @include vertical-flex;
 }
