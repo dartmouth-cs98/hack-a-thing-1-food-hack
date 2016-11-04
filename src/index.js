@@ -12,12 +12,15 @@ import './style.scss';
 import GradeSelector from './components/grade_selector';
 import Home from './components/home';
 import NavBar from './components/nav_bar';
+import About from './components/about';
+import Contact from './components/contact';
+import Login from './components/login';
 
 
 const App = (props) => {
   return (
     <div className="app-container">
-      <NavBar />
+      <NavBar path={props.location.pathname} gradeSelected={props.params.gradeSelected} />
       {props.children}
     </div>
   );
@@ -28,6 +31,9 @@ render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={GradeSelector} />
+      <Route path="/about" component={About} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/login" component={Login} />
       <Route path="/:gradeSelected" component={Home} />
       <Route path="/:gradeSelected/:categoryId" component={Home} />
       <Route path="/:gradeSelected/:categoryId/:activitySelected" component={Home} />
