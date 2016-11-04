@@ -1,12 +1,12 @@
-// nav_bar.js
+// category_list.js
 import React from 'react';
-import NavCategoryItem from './nav_category_item';
+import CategoryListItem from './category_list_item';
 
-const NavBar = (props) => {
+const CategoryList = (props) => {
   const categoryButtons = Object.keys(props.categories).map((key) => {
     const category = props.categories[key];
     return (
-      <NavCategoryItem
+      <CategoryListItem
         category={category}
         categorySelected={props.categorySelected}
         key={category.name}
@@ -16,14 +16,14 @@ const NavBar = (props) => {
   });
 
   return (
-    <div className="nav-bar">
-      <div className="top-nav nav-row">
+    <div className="cat-list">
+      <div className="top-cat cat-row">
         {categoryButtons[0]}
         {categoryButtons[1]}
         {categoryButtons[2]}
         {categoryButtons[3]}
       </div>
-      <div className="bottom-nav nav-row">
+      <div className="bottom-cat cat-row">
         {categoryButtons[4]}
         {categoryButtons[5]}
         {categoryButtons[6]}
@@ -33,4 +33,4 @@ const NavBar = (props) => {
   );
 };
 
-export default NavBar;
+export default CategoryList;

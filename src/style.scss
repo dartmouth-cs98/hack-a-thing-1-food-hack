@@ -1,5 +1,6 @@
 // Constants
-$nav-width: 20%;
+$grade-select-size: 200px;
+$cat-width: 200px;
 $selected-category-color: #555;
 $selected-activity-color: #555;
 
@@ -74,14 +75,14 @@ body {
   width: 100%;
 }
 
-.nav-row {
+.cat-row {
   width: 100%;
   display: block;
   @include flex-space-around;
 }
 
-.nav-btn {
-  width: $nav-width;
+.cat-btn {
+  width: $cat-width;
   text-align: center;
   border: 1px solid #000;
 }
@@ -106,7 +107,7 @@ body {
   list-style: none;
   cursor: pointer;
   border: 1px solid #000;
-  width: 100%;
+  width: $cat-width;
   text-align: center;
   height: 2.5em;
   vertical-align: center;
