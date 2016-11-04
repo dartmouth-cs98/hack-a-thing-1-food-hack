@@ -83,6 +83,7 @@ body {
 
 .cat-btn {
   width: $cat-width;
+  min-width: 190px;
   text-align: center;
   border: 1px solid #000;
 }
@@ -107,7 +108,7 @@ body {
   list-style: none;
   cursor: pointer;
   border: 1px solid #000;
-  width: $cat-width;
+  width: 100%;
   text-align: center;
   height: 2.5em;
   vertical-align: center;

@@ -46,7 +46,7 @@ export function shakyCanvas(p5) {
 
   p.draw = () => {
     p.background(255, 200, 100);
-    p.text('difficult mode', p.width/2, 10);
+    p.text('difficult mode', p.width / 2, 10);
     p.noSmooth();
     p.stroke(0);
     p.strokeWeight(strokeWeight);
@@ -61,7 +61,7 @@ export function shakyCanvas(p5) {
   };
 
   p.mouseDragged = () => {
-    if ((p.mouseY - trueY > 15) || (trueY - p.mouseY > 15)) {
+    if ((p.mouseY - trueY > 15) || (trueY - p.mouseY > 15) || (p.mouseX - trueX > 15) || (trueX - p.mouseX > 15)) {
       const xShift = p.random(-25, 25);
       const yShift = p.random(-15, 15);
       p.line(x, y, p.mouseX + xShift, p.mouseY + yShift);
