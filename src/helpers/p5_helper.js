@@ -52,7 +52,7 @@ export function shakyCanvas(p5) {
     p.strokeWeight(strokeWeight);
     p.noLoop();
   };
-  
+
   p.mousePressed = () => {
     x = p.mouseX;
     y = p.mouseY;

@@ -72,6 +72,7 @@ const activityData = {
       drawline: {
         name: 'Draw a line',
         id: 'drawline',
+        url: '/assets/activities/draw_line.html',
       },
       // 'Cerebral Palsy',
       // 'Disability from an injury',
