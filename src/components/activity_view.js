@@ -24,7 +24,7 @@ class ActivityView extends Component {
       console.log(this.props.activitySelected);
       return (
         <div className="activity-view">
-          <iframe src={this.props.activitySelected.url} />
+          <iframe className="activity-frame" src={this.props.activitySelected.url} />
         </div>
       );
     }

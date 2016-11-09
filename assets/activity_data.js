@@ -87,7 +87,7 @@ const activityData = {
     name: 'Social/Emotional Disabilities',
     id: 'social',
     activities: {
-      ebd:{
+      ebd: {
         name: 'EBD',
         id: 'ebd',
       },

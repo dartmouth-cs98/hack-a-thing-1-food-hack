@@ -28,6 +28,7 @@ render((
       <IndexRoute component={GradeSelector} />
       <Route path="/:gradeSelected" component={Home} />
       <Route path="/:gradeSelected/:categoryId" component={Home} />
+      <Route path="/:gradeSelected/:categoryId/:activityId" component={Home} />
     </Route>
   </Router>
 ), document.getElementById('main'));

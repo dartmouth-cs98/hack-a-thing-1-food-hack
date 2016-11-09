@@ -97,6 +97,16 @@ body {
   width: 100% - $cat-width;
 }
 
+.activity-frame {
+  border: 0;
+  width: 100%;
+  height: 500px;
+}
+
+// .activity-body {
+//   margin: 0;
+// }
+
 .activity-list {
   float: right;
   width: $cat-width;

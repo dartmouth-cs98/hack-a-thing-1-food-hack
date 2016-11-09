@@ -2,9 +2,14 @@
 <html>
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.4/p5.min.js"></script>
+    <style type="text/css">
+      .activity-body {
+        margin: 0px;
+      }
+    </style>
   </head>
-  <body>
-    <div id="main">Hello World!</div>
+  <body class="activity-body">
+    <div id="canvas-container"></div>
   </body>
   <script type="text/javascript">
     const height = 500;
@@ -82,7 +87,7 @@
         p.resizeCanvas(p.windowWidth * 0.35, height);
       };
     }
-    const canvas = document.getElementById('main');
+    const canvas = document.getElementById('canvas-container');
     const normalP5 = new p5(drawingCanvas, canvas);
     const shakyP5 = new p5(shakyCanvas, canvas);
     console.log(normalP5, shakyP5);
