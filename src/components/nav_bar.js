@@ -12,6 +12,7 @@ class NavBar extends Component {
   render() {
     const aboutClassName = (this.props.path === '/about') ? 'menu-btn selected-menu-btn' : 'menu-btn';
     const contactClassName = (this.props.path === '/contact') ? 'menu-btn selected-menu-btn' : 'menu-btn';
+    const loginClassName = (this.props.path === '/login') ? 'login-btn selected-login-btn' : 'login-btn';
     const activityClassName = (this.props.path === '/' || this.props.gradeSelected) ? 'menu-btn selected-menu-btn' : 'menu-btn';
     return (
       <div className="nav-container">
@@ -20,7 +21,7 @@ class NavBar extends Component {
           <Link to="/about" className={aboutClassName} >ABOUT</Link>
           <Link to="/contact" className={contactClassName} >CONTACT</Link>
         </div>
-        <Link to="/login" className="login-btn" >
+        <Link to="/login" className={loginClassName} >
           <img className="login-img" src="/assets/LOGIN_button.png" alt="Error" />
         </Link>
       </div>

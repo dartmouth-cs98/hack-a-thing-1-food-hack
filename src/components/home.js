@@ -28,7 +28,6 @@ class Home extends Component {
           categories={this.activityData}
           categorySelected={categorySelected}
         />
-        <p> the selected grade range is {gradeSelected} </p>
         <ActivityView
           gradeSelected={gradeSelected}
           categorySelected={categorySelected}

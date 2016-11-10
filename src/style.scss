@@ -71,6 +71,7 @@ body {
   margin-right: $menu_spacing;
   padding-bottom: 5px;
   font-size: 16.67px;
+
   &:hover {
     text-decoration: none;
   }
@@ -82,8 +83,6 @@ body {
 }
 
 .menu-container {
-
-
   .menu-btn {
     color: white;
   }
@@ -99,6 +98,7 @@ body {
         font-weight: bold;
       }
     }
+
     .selected-menu-btn:hover {
       border-bottom: solid 3px;
     }
@@ -143,8 +143,6 @@ body {
 }
 
 .login-btn{
-  // float: right;
-  // margin-top: $nav-bar-width/6;
   margin-right: 50px;
 }
 
