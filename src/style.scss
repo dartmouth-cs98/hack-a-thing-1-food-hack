@@ -1,11 +1,14 @@
 // Constants
 $grade-select-size: 200px;
 $cat-width: 20%;
+$nav-bar-width: 80px;
+$nav-grey: #f1f1f1;
+$menu_spacing: 50px;
 $selected-category-color: #555;
 $selected-activity-color: #555;
 
 //Imports
-@import url("https://fonts.googleapis.com/css?family=Quicksand");
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,700");
 
 // Mixins
 @mixin flex-box {
@@ -35,6 +38,20 @@ $selected-activity-color: #555;
   @include flex-box;
 }
 
+@mixin flex-align-end {
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  @include flex-box;
+}
+
+@mixin flex-vertical-align-center {
+  align-items: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  @include flex-box;
+}
+
 html, body, #main {
   margin: 0;
   padding: 0;
@@ -44,6 +61,48 @@ html, body, #main {
 
 body {
   font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-btn {
+  text-decoration: none;
+  display: inline-block;
+  margin-right: $menu_spacing;
+  padding-bottom: 5px;
+  font-size: 16.67px;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.selected-menu-btn {
+  border-bottom: solid 3px;
+  font-weight: bold;
+}
+
+.menu-container {
+  .menu-btn {
+    color: white;
+  }
+
+  &:hover {
+    .menu-btn {
+      color: $nav-grey;
+      border-bottom: 0;
+      font-weight: normal;
+
+      &:hover {
+        color: white;
+        font-weight: bold;
+      }
+    }
+
+    .selected-menu-btn:hover {
+      border-bottom: solid 3px;
+    }
+  }
 }
 
 .app-container {
@@ -62,6 +121,14 @@ body {
   }
 }
 
+.nav-container {
+  height: $nav-bar-width;
+  width: 100%;
+  background-color: transparent;
+  @include flex-align-end;
+  @include flex-vertical-align-center;
+}
+
 .grade-btn-container {
   width: 100%;
   @include flex-space-around;
@@ -73,6 +140,14 @@ body {
 
 .grade-range-img {
   width: 100%;
+}
+
+.login-img {
+  height: 48px;
+}
+
+.login-btn{
+  margin-right: 50px;
 }
 
 .cat-row {
