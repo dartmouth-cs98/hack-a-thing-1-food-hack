@@ -23,7 +23,6 @@ class Home extends Component {
     const activitySelected = this.props.params.activitySelected;
     return (
       <div className="home-container">
-        <p> the selected grade range is {gradeSelected} </p>
         <CategoryList
           gradeSelected={gradeSelected}
           categories={this.activityData}
