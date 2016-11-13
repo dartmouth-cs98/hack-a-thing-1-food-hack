@@ -12,22 +12,67 @@
     <div id="canvas-container"></div>
   </body>
   <script type="text/javascript">
-    const height = 500;
     const strokeWeight = 10;
+    const width = 300;
+    const height = 450;
+    const c1 = [[166, 406], [131, 412], [91, 398], [58, 368], [55, 353], [66, 349], [151, 379]];
+    const c2 = [[167, 380], [206, 364], [79, 324], [64, 307], [64, 286], [84, 275]];
+    const c3 = [[84, 275], [79, 205], [50, 92], [50, 49], [70, 29], [99, 23], [125, 40]];
+    const c4 = [[140, 72], [134, 81], [113, 91], [117, 107], [144, 124], [174, 178], [195, 188]];
+    const c5 = [[195, 188], [229, 161], [244, 129]];
+    const c6 = [[252, 92], [260, 68], [286, 59], [301, 64]];
+    const bottom = c1.concat(c2);
+    const topLeft = c3.concat(c4);
+    const topRight = c5.concat(c6);
+    const lCoords = bottom.concat(topLeft).concat(topRight);
+    function isOnFragment(x, y, coords) {
+      for (i = 0; i < coords.length - 1; i += 1) {
+        if (x < coords[i][0] && x < coords[i+1][0]) continue;
+        if (x > coords[i][0] && x > coords[i+1][0]) continue;
+        if (y < coords[i][1] && y < coords[i+1][1]) continue;
+        if (y > coords[i][1] && y > coords[i+1][1]) continue;
+        return true;
+      }
+      return false;
+    }
+
+    function isOnBottom(x, y) {
+      if (x < 47 || x > 212 || y < 275 || y > 416) return false;
+      return isOnFragment(x, y, bottom);
+    }
+    function isOnTopLeft(x, y) {
+      if (x < 42 || x > 195 || y < 15 || y > 275) return false;
+      return isOnFragment(x, y, topLeft);
+    }
+    function isOnTopRight(x, y) {
+      if (x < 195 || x > 299 || y < 55 || y > 195) return false;
+      return isOnFragment(x, y, topRight);
+    }
+    function isOnLine(x, y) {
+      return isOnBottom(x, y) || isOnTopLeft(x, y) || isOnTopRight(x, y);
+    }
 
     function drawingCanvas(p5) {
       const p = p5;
-      let x, y;
+      let x, y, img;
+
+      p.preload = () => {
+        img = p.loadImage("assets/Physical-disability-left-curve.png");
+      };
 
       p.setup = () => {
-        p.createCanvas(p.windowWidth * 0.35, height);
+        p.createCanvas(width, height);
+        p.background(255);
+        p.image(img, 0, 0, width, height);
       };
 
       p.draw = () => {
-        p.background(255);
         p.stroke(0);
         p.strokeWeight(strokeWeight);
         p.noLoop();
+        for (i = 0; i < lCoords.length - 1; i += 1) {
+          p.line(lCoords[i][0], lCoords[i][1], lCoords[i+1][0], lCoords[i+1][1]);
+        }
       };
 
       p.mousePressed = () => {
@@ -36,30 +81,39 @@
       };
 
       p.mouseDragged = () => {
-        p.line(x, y, p.mouseX, p.mouseY);
         x = p.mouseX;
         y = p.mouseY;
-      };
-
-      p.windowResized = () => {
-        p.resizeCanvas(p.windowWidth * 0.35, height);
+        if (isOnLine(x, y)) {
+          p.stroke("#00FF00");
+        } else {
+          p.stroke("#FF0000");
+        }
+        p.point(x, y);
       };
     }
 
     function shakyCanvas(p5) {
       const p = p5;
-      let x, y, trueX, trueY;
+      let x, y, trueX, trueY, img;
+
+      p.preload = () => {
+        img = p.loadImage("assets/Physical-disability-right-curve.png");
+      };
 
       p.setup = () => {
-        p.createCanvas(p.windowWidth * 0.35, height);
+        p.createCanvas(width, height);
+        p.background(255, 255, 10);
+        p.image(img, 0, 0, width, height);
       };
 
       p.draw = () => {
-        p.background(255, 200, 100);
         p.noSmooth();
-        p.stroke(0);
+        p.stroke(255);
         p.strokeWeight(strokeWeight);
         p.noLoop();
+        for (i = 0; i < lCoords.length - 1; i += 1) {
+          p.line(width - lCoords[i][0], lCoords[i][1], width - lCoords[i+1][0], lCoords[i+1][1]);
+        }
       };
 
       p.mousePressed = () => {
@@ -70,9 +124,14 @@
       };
 
       p.mouseDragged = () => {
-        if ((p.mouseY - trueY > 15) || (trueY - p.mouseY > 15) || (p.mouseX - trueX > 15) || (trueX - p.mouseX > 15)) {
+        if ((p.mouseY - trueY > 10) || (trueY - p.mouseY > 10) || (p.mouseX - trueX > 10) || (trueX - p.mouseX > 10)) {
           const xShift = p.random(-25, 25);
           const yShift = p.random(-15, 15);
+          if (isOnLine(width - x, y)) {
+            p.stroke("#00FF00");
+          } else {
+            p.stroke("#FF0000");
+          }
           p.line(x, y, p.mouseX + xShift, p.mouseY + yShift);
           x = p.mouseX + xShift;
           y = p.mouseY + yShift;
@@ -80,14 +139,9 @@
           trueY = p.mouseY;
         }
       };
-
-      p.windowResized = () => {
-        p.resizeCanvas(p.windowWidth * 0.35, height);
-      };
     }
     const canvas = document.getElementById('canvas-container');
-    const normalP5 = new p5(drawingCanvas, canvas);
-    const shakyP5 = new p5(shakyCanvas, canvas);
-    console.log(normalP5, shakyP5);
+    new p5(drawingCanvas, canvas);
+    new p5(shakyCanvas, canvas);
   </script>
 </html>
