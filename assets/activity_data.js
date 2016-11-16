@@ -19,9 +19,9 @@ const activityData = {
       },
     },
   },
-  visual: {
+  blindness: {
     name: 'Blindness',
-    id: 'visual',
+    id: 'blindness',
     activities: {
       1: {
         name: 'Activity 1',
@@ -92,9 +92,9 @@ const activityData = {
       },
     },
   },
-  speech: {
+  language: {
     name: 'Language',
-    id: 'Language',
+    id: 'language',
     activities: {
       1: {
         name: 'Activity 1',
