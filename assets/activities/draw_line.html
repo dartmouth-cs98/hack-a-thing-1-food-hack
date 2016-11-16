@@ -116,6 +116,11 @@
         y = p.mouseY;
       };
 
+      p.mouseClicked = () => {
+        console.log(p.mouseX, p.mouseY);
+        console.log(isOnLine(p.mouseX, p.mouseY));
+      };
+
       p.mouseDragged = () => {
         x = p.mouseX;
         y = p.mouseY;
@@ -175,6 +180,43 @@
           trueY = p.mouseY;
         }
       };
+      // p.mouseDragged = () => {
+      //   // if ((p.mouseY === trueY) || (p.mouseX === trueX) || (p.mouseY - trueY > 20) || (trueY - p.mouseY > 20) || (p.mouseX - trueX > 20) || (trueX - p.mouseX > 20)) {
+      //   //   const xShift = p.random(-25, 25);
+      //   //   const yShift = p.random(-15, 15);
+      //   //   const newX = p.mouseX + xShift;
+      //   //   const newY = p.mouseY + yShift;
+      //   //
+      //   //   const numIncrements = 5; // (p.abs(xShift) > p.abs(yShift)) ? p.abs(xShift) : p.abs(yShift);
+      //   //   const xIncrement = (newX - x) / numIncrements;
+      //   //   const yIncrement = (newY - y) / numIncrements;
+      //   //   let fragIndex = null;
+      //   //   let i;
+      //   //   console.log(numIncrements, xIncrement, yIncrement);
+      //   //   for (i = 0; i <= numIncrements; i += 1) {
+      //   //     console.log(i);
+      //   //     const calcX = x + i*xIncrement;
+      //   //     const calcY = y + i*yIncrement;
+      //   //     console.log(calcX, calcY);
+      //   //     if (fragIndex === null) {
+      //   //       fragIndex = pointIsBetween(calcX, calcY, rCoords);
+      //   //     }
+      //   //     if (fragIndex) {
+      //   //
+      //   //     }
+      //     //   if (isOnLine(width - x, y)) {
+      //     //     p.stroke("#00FF00");
+      //     //   } else {
+      //     //     p.stroke("#FF0000");
+      //     //   }
+      //     //   p.point(calcX, calcY);
+      //     // }
+      //     // x = newX;
+      //     // y = newY;
+      //     // trueX = p.mouseX;
+      //     // trueY = p.mouseY;
+      //   // }
+      // };
     }
     const canvas = document.getElementById('canvas-container');
     new p5(drawingCanvas, canvas);
