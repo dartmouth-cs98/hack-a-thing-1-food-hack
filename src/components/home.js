@@ -29,12 +29,12 @@ class Home extends Component {
           categories={this.activityData}
           categorySelected={categorySelected}
         />
-        <ActivityView
+        <ActivityList
           gradeSelected={gradeSelected}
           categorySelected={categorySelected}
           activitySelected={activitySelected}
         />
-        <ActivityList
+        <ActivityView
           gradeSelected={gradeSelected}
           categorySelected={categorySelected}
           activitySelected={activitySelected}

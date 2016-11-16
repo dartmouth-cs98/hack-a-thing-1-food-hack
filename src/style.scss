@@ -6,6 +6,7 @@ $nav-grey: #f1f1f1;
 $menu_spacing: 50px;
 $selected-category-color: #555;
 $selected-activity-color: #555;
+$orange: #f9ab51;
 
 //Imports
 @import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,700");
@@ -17,39 +18,40 @@ $selected-activity-color: #555;
   display: -moz-flex;
 }
 
+@mixin inline-flex {
+  display: inline-flex;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+}
+
 @mixin vertical-flex {
   flex-direction: column;
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
-  @include flex-box;
 }
 
 @mixin flex-space-around {
   justify-content: space-around;
   -webkit-justify-content: space-around;
   -moz-justify-content: space-around;
-  @include flex-box;
 }
 
 @mixin flex-space-between {
   justify-content: space-between;
   -webkit-justify-content: space-between;
   -moz-justify-content: space-between;
-  @include flex-box;
 }
 
-@mixin flex-align-end {
+@mixin flex-justify-end {
   justify-content: flex-end;
   -webkit-justify-content: flex-end;
   -moz-justify-content: flex-end;
-  @include flex-box;
 }
 
-@mixin flex-vertical-align-center {
+@mixin flex-align-center {
   align-items: center;
   -webkit-align-items: center;
   -moz-align-items: center;
-  @include flex-box;
 }
 
 html, body, #main {
@@ -64,11 +66,17 @@ body {
   margin: 0;
   padding: 0;
 }
-
-.app-container {
-  background-image: url('/assets/grade_selection/Grade_Selection_UI_background.png');
+.grade-selection-container, .app-container {
   background-size: cover;
   height: 100%;
+}
+
+.grade-selection-container {
+  background-image: url('/assets/grade_selection/Grade_Selection_UI_background.png');
+}
+
+.app-container {
+  background-image: url('/assets/category-choosing_bg.png');
 }
 
 // Navigation Menu Assets
@@ -76,8 +84,9 @@ body {
   height: $nav-bar-height;
   width: 100%;
   background-color: transparent;
-  @include flex-align-end;
-  @include flex-vertical-align-center;
+  @include flex-justify-end;
+  @include flex-align-center;
+  @include flex-box;
 }
 
 .nav-btn {
@@ -86,10 +95,7 @@ body {
   margin-right: $menu_spacing;
   padding-bottom: 5px;
   font-size: 13px;
-
-  &:hover {
-    text-decoration: none;
-  }
+  color: white;
 }
 
 .selected-nav-btn {
@@ -98,9 +104,9 @@ body {
 }
 
 .nav-menu-container {
-  .nav-btn {
-    color: white;
-  }
+  height: 48px;
+  @include inline-flex;
+  @include flex-align-center;
 
   &:hover {
     .nav-btn {
@@ -126,6 +132,7 @@ body {
 
 .login-btn{
   margin-right: 50px;
+  @include inline-flex;
 }
 
 // Grade Selection Assets
@@ -142,6 +149,7 @@ body {
 .grade-btn-container {
   width: 100%;
   @include flex-space-around;
+  @include flex-box;
 }
 
 .grade-range-btn {
@@ -157,45 +165,71 @@ body {
   width: 100%;
   display: block;
   @include flex-space-around;
+  @include flex-box;
 }
 
 .cat-btn {
-  width: $cat-width;
-  min-width: 190px;
+  // width: $cat-width;
+  // min-width: 190px;
+  min-width: 268px;
+  width: 268px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 29.88px;
+  font-weight: bold;
+  font-size: 22px;
+  color: $orange;
   text-align: center;
-  border: 1px solid #000;
+  background-color: white;
+  opacity: 0.5;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .selected-category {
-  background-color: $selected-category-color;
+  background-color: $orange;
+  color: white;
+  opacity: 1;
 }
 
 // Activity List Assets
 .activity-list {
-  float: right;
-  width: $cat-width;
-  padding: 0;
+  margin-top: 25px;
+  width: 268px;
+  // padding: 0;
   @include vertical-flex;
+  @include inline-flex;
+  @include flex-align-center;
 }
 
 .activity-item {
-  list-style: none;
   cursor: pointer;
-  border: 1px solid #000;
-  width: 100%;
-  text-align: center;
-  height: 2.5em;
-  vertical-align: center;
+  text-decoration: none;
+  font-size: 30px;
+  line-height: 30px;
+  color: white;
+
+  &:hover {
+    border-bottom: 2px solid white;
+  }
 }
 
 .selected-activity {
-  background-color: $selected-activity-color;
+  font-weight: bold;
 }
 
 // Activity Screen Assets
 .activity-view {
   display: inline-block;
-  width: 100% - $cat-width;
+  background-color: white;
+  opacity: 0.8;
+  width: 903px;
+  // width: 100% - $cat-width;
+  height: 439px;
+  border-radius: 15px;
 }
 
 .activity-frame {
