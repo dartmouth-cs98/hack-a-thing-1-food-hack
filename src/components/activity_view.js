@@ -7,12 +7,12 @@ class ActivityView extends Component {
 
     this.chooseCategory = (
       <div className="activity-view category-not-selected">
-        <img src="/assets/pick_category.png" alt="Please choose a category" />
+        <img className="pick-category" src="/assets/pick_category.png" alt="Please choose a category" />
       </div>
     );
     this.chooseActivity = (
       <div className="activity-view activity-not-selected">
-        <img src="/assets/pick_activity.png" alt="Please choose an activity" />
+        <img className="pick-activity" src="/assets/pick_activity.png" alt="Please choose an activity" />
       </div>
     );
   }

@@ -7,6 +7,14 @@ const activityData = {
         name: 'Activity 1',
         id: 1,
       },
+      2: {
+        name: 'Activity 2',
+        id: 2,
+      },
+      3: {
+        name: 'Activity 3',
+        id: 3,
+      },
     },
   },
   hearing: {
@@ -16,6 +24,10 @@ const activityData = {
       1: {
         name: 'Activity 1',
         id: 1,
+      },
+      2: {
+        name: 'Activity 2',
+        id: 2,
       },
     },
   },
@@ -52,6 +64,22 @@ const activityData = {
       5: {
         name: 'Activity 5',
         id: 5,
+      },
+      6: {
+        name: 'Activity 6',
+        id: 6,
+      },
+      7: {
+        name: 'Activity 7',
+        id: 7,
+      },
+      8: {
+        name: 'Activity 8',
+        id: 8,
+      },
+      9: {
+        name: 'Activity 9',
+        id: 9,
       },
     },
   },
