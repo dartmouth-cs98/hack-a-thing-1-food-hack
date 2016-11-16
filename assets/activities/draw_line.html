@@ -28,34 +28,64 @@
     const topRight = c5.concat(c6);
     const rTopRight = topRight.map((coords) => { return [width - coords[0], coords[1]]; });
     const lCoords = bottom.concat(topLeft).concat(topRight);
-    function isOnFragment(x, y, coords) {
-      for (i = 0; i < coords.length - 1; i += 1) {
     const rCoords = lCoords.map((coords) => {
       return [width - coords[0], coords[1]];
     });
+
+    function pointIsBetween(x, y, coords) {
+      if (!coords) return null;
+      for( i = 0; i < coords.length - 1; i += 1) {
         if (x < coords[i][0] && x < coords[i+1][0]) continue;
         if (x > coords[i][0] && x > coords[i+1][0]) continue;
         if (y < coords[i][1] && y < coords[i+1][1]) continue;
         if (y > coords[i][1] && y > coords[i+1][1]) continue;
-        return true;
+        return i;
       }
-      return false;
+      return null;
+    }
+
+    function calculateLineY(coords, index, x) {
+      if (index === null) return null;
+      const slope = (coords[index+1][1] - coords[index][1])/(coords[index+1][0] - coords[index][0]);
+      const intercept = coords[index][1] - slope*coords[index][0];
+      const calculatedY = slope*x + intercept;
+      return calculatedY;
+    }
+
+    function isOnFragment(x, y, coords) {
+      const i = pointIsBetween(x, y, coords);
+      const calculatedY = calculateLineY(coords, i, x);
+      if ((i === null) || (calculatedY === null)) return false;
+      console.log(coords[i], coords[i+1], calculatedY);
+      return ((calculatedY === y) || ((calculatedY > y) && (calculatedY - y < strokeWeight*2)) || ((calculatedY < y) && (y - calculatedY < strokeWeight*2)));
     }
 
     function isOnBottom(x, y) {
-      if (x < 47 || x > 212 || y < 275 || y > 416) return false;
-      return isOnFragment(x, y, bottom);
+      const isInArea = (x < 47 || x > 212 || y < 275 || y > 416) ? false: true;
+      return isInArea;
     }
     function isOnTopLeft(x, y) {
-      if (x < 42 || x > 195 || y < 15 || y > 275) return false;
-      return isOnFragment(x, y, topLeft);
+      const isInArea = (x < 42 || x > 195 || y < 15 || y > 275) ? false: true;
+      return isInArea;
     }
     function isOnTopRight(x, y) {
-      if (x < 195 || x > 299 || y < 55 || y > 195) return false;
-      return isOnFragment(x, y, topRight);
+      const isInArea = (x < 195 || x > 299 || y < 55 || y > 195) ? false: true;
+      return isInArea;
     }
     function isOnLine(x, y) {
-      return isOnBottom(x, y) || isOnTopLeft(x, y) || isOnTopRight(x, y);
+      if isOnBottom(x, y) {
+        console.log("isOnBottom");
+        return isOnFragment(x, y, bottom);
+      }
+      if isOnTopLeft(x, y) {
+        console.log('isOnTopLeft');
+        return isOnFragment(x, y, topLeft);
+      }
+      if isOnTopRight(x, y) {
+        console.log('isOnTopRight');
+        return isOnFragment(x, y, topRight);
+      }
+      return false;
     }
 
     function drawingCanvas(p5) {
@@ -117,8 +147,8 @@
         p.stroke(255);
         p.strokeWeight(strokeWeight);
         p.noLoop();
-        for (i = 0; i < lCoords.length - 1; i += 1) {
-          p.line(width - lCoords[i][0], lCoords[i][1], width - lCoords[i+1][0], lCoords[i+1][1]);
+        for (i = 0; i < rCoords.length - 1; i += 1) {
+          p.line(rCoords[i][0], rCoords[i][1], rCoords[i+1][0], rCoords[i+1][1]);
         }
       };
 
