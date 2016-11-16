@@ -22,11 +22,17 @@
     const c5 = [[195, 190], [200, 188], [214, 178], [228, 161], [243, 129]];
     const c6 = [[252, 92], [253, 80], [260, 68], [270, 63], [272, 62], [286, 60], [301, 61]];
     const bottom = c1.concat(c2);
+    const rBottom = bottom.map((coords) => { return [width - coords[0], coords[1]]; });
     const topLeft = c3.concat(c4);
+    const rTopLeft = topLeft.map((coords) => { return [width - coords[0], coords[1]]; });
     const topRight = c5.concat(c6);
+    const rTopRight = topRight.map((coords) => { return [width - coords[0], coords[1]]; });
     const lCoords = bottom.concat(topLeft).concat(topRight);
     function isOnFragment(x, y, coords) {
       for (i = 0; i < coords.length - 1; i += 1) {
+    const rCoords = lCoords.map((coords) => {
+      return [width - coords[0], coords[1]];
+    });
         if (x < coords[i][0] && x < coords[i+1][0]) continue;
         if (x > coords[i][0] && x > coords[i+1][0]) continue;
         if (y < coords[i][1] && y < coords[i+1][1]) continue;
