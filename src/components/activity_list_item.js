@@ -1,6 +1,6 @@
 // activity_list_item.js
 import React from 'react';
-import { browserHistory } from 'react-router';
+import { Link } from 'react-router';
 
 const ActivityListItem = (props) => {
   const currentClass = (props.activitySelected === props.activity) ? 'selected-activity activity-item' : 'activity-item';
@@ -8,9 +8,9 @@ const ActivityListItem = (props) => {
   linkUrl = linkUrl.concat('/').concat(props.categorySelected.id);
   linkUrl = linkUrl.concat('/').concat(props.activity.id);
   return (
-    <li className={currentClass} onClick={() => { browserHistory.push(linkUrl); }}>
+    <Link to={linkUrl} className={currentClass} >
       {props.activity.name}
-    </li>
+    </Link>
   );
 };
 

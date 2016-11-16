@@ -19,9 +19,9 @@ const ActivityList = (props) => {
     );
   });
   return (
-    <ul className="activity-list">
+    <div className="activity-list">
       {listItems}
-    </ul>
+    </div>
   );
 };
 
