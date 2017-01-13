@@ -6,10 +6,11 @@ const ActivityList = (props) => {
   if (!props.categorySelected) {
     return <div className="hidden" />;
   }
-  const listItems = props.categorySelected.activities.map((activity) => {
+  const listItems = Object.keys(props.categorySelected.activities).map((activityId) => {
+    const activity = props.categorySelected.activities[activityId];
     return (
       <ActivityListItem
-        key={activity}
+        key={activity.id}
         activitySelected={props.activitySelected}
         categorySelected={props.categorySelected}
         gradeSelected={props.gradeSelected}

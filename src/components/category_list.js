@@ -18,16 +18,10 @@ const CategoryList = (props) => {
   return (
     <div className="cat-list">
       <div className="top-cat cat-row">
-        {categoryButtons[0]}
-        {categoryButtons[1]}
-        {categoryButtons[2]}
-        {categoryButtons[3]}
+        {categoryButtons.splice(0, categoryButtons.length / 2)}
       </div>
       <div className="bottom-cat cat-row">
-        {categoryButtons[4]}
-        {categoryButtons[5]}
-        {categoryButtons[6]}
-        {categoryButtons[7]}
+        {categoryButtons}
       </div>
     </div>
   );

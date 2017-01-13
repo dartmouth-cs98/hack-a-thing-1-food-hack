@@ -2,90 +2,140 @@ const activityData = {
   autism: {
     name: 'Autism',
     id: 'autism',
-    activities: [
-      'Aspergers',
-      'PDD\'s',
-      'Austism Spectrum',
-    ],
+    activities: {
+      aspergers: {
+        name: 'Aspergers',
+        id: 'aspergers',
+      },
+      // 'PDD\'s',
+      // 'Austism Spectrum',
+    },
   },
   hearing: {
     name: 'Hearing Loss/Deafness',
     id: 'hearing',
-    activities: [
-      'Deafness',
-      'Hearing Impaired',
-      'Deaf as a result of illness',
-      'Deaf as a result of age',
-    ],
+    activities: {
+      deafness: {
+        name: 'Deafness',
+        id: 'deafness',
+      },
+      // 'Hearing Impaired',
+      // 'Deaf as a result of illness',
+      // 'Deaf as a result of age',
+    },
   },
   visual: {
     name: 'Visual Impairments/Blindness',
     id: 'visual',
-    activities: [
-      'Color Blindness',
-      'Glaucoma',
-      'Blindness as a result of age',
-      'Cataracts',
-      'Blindness',
-      'Near Sightedness',
-    ],
+    activities: {
+      colorblindness: {
+        name: 'Color Blindness',
+        id: 'colorblindness',
+      },
+      // 'Glaucoma',
+      // 'Blindness as a result of age',
+      // 'Cataracts',
+      // 'Blindness',
+      // 'Near Sightedness',
+    },
   },
   learning: {
     name: 'Learning Disabilities',
     id: 'learning',
-    activities: [
-      'ADD/ADHD',
-      'Dyslexia',
-      'Memory Processing',
-      'Dyscalculia',
-      'Dysgraphia',
-    ],
+    activities: {
+      adhd: {
+        name:'ADD/ADHD',
+        id:'adhd',
+      },
+      dyslexia: {
+        name: 'Dyslexia',
+        id: 'dyslexia',
+      },
+      memory: {
+        name: 'Memory Processing',
+        id: 'memory',
+      },
+      dyscalculia: {
+        name: 'Dyscalculia',
+        id: 'dyscalculia',
+      },
+      dysgraphia: {
+        name: 'Dysgraphia',
+        id: 'dysgraphia',
+      },
+    },
   },
   physical: {
     name: 'Physical Disabilities',
     id: 'physical',
-    activities: [
-      'Cerebral Palsy',
-      'Disability from an injury',
-      'Amputation',
-      'Stroke',
-      'Traumatic Brain Injury (TBI)',
-      'Muscular Dystrophy',
-      'Birth Defect',
-    ],
+    activities: {
+      drawline: {
+        name: 'Draw a line',
+        id: 'drawline',
+        url: '/assets/activities/draw_line.html',
+      },
+      // 'Cerebral Palsy',
+      // 'Disability from an injury',
+      // 'Amputation',
+      // 'Stroke',
+      // 'Traumatic Brain Injury (TBI)',
+      // 'Muscular Dystrophy',
+      // 'Birth Defect',
+    },
   },
   social: {
     name: 'Social/Emotional Disabilities',
     id: 'social',
-    activities: [
-      'EBD',
-      'Post Traumatic Stress Disorder (PTSD)',
-      'OCC',
-      'Obsessive Compulsive Disorder (OCD)',
-      'Depression',
-    ],
+    activities: {
+      ebd: {
+        name: 'EBD',
+        id: 'ebd',
+      },
+      ptsd: {
+        name: 'Post Traumatic Stress Disorder',
+        id: 'ptsd',
+      },
+      occ: {
+        name: 'OCC',
+        id: 'occ',
+      },
+      ocd: {
+        name: 'Obsessive Compulsive Disorder',
+        id: 'ocd',
+      },
+      depression: {
+        name: 'Depression',
+        id: 'depression',
+      },
+    },
   },
   speech: {
     name: 'Speech and Language',
     id: 'speech',
-    activities: [
-      'Speech Delay',
-      'Speech Impediment',
-      'Lisp',
-      'Stuttering',
-      'Articulation challenge',
-    ],
+    activities: {
+      delay: {
+        name: 'Speech Delay',
+        id: 'delay',
+      },
+      // 'Speech Impediment',
+      // 'Lisp',
+      // 'Stuttering',
+      // 'Articulation challenge',
+    },
   },
   cognitive: {
     name: 'Cognitive Development',
     id: 'cognitive',
-    activities: [
-      'Downs Syndrome',
-      'Fetal Alcohol Syndrome',
-      'Developmental Delay',
-      'Stroke',
-      'Dyspraxia',
-    ],
+    activities: {
+      downs: {
+        name: 'Downs Syndrome',
+        id: 'downs',
+      },
+      // 'Fetal Alcohol Syndrome',
+      // 'Developmental Delay',
+      // 'Stroke',
+      // 'Dyspraxia',
+    },
   },
 };
 

@@ -11,22 +11,23 @@ class ActivityView extends Component {
   render() {
     if (!this.props.categorySelected) {
       return (
-        <div className="category-not-selected"> {this.chooseCategoryText} </div>
+        <div className="activity-view category-not-selected"> {this.chooseCategoryText} </div>
       );
     } else if (!this.props.activitySelected) {
       return (
-        <div className="activity-not-selected"> {this.chooseActivityText} </div>
+        <div className="activity-view activity-not-selected"> {this.chooseActivityText} </div>
+      );
+    } else {
+      console.log('selectedCategory:');
+      console.log(this.props.categorySelected);
+      console.log('selected activity: ');
+      console.log(this.props.activitySelected);
+      return (
+        <div className="activity-view">
+          <iframe className="activity-frame" src={this.props.activitySelected.url} />
+        </div>
       );
     }
-    console.log('selectedCategory:');
-    console.log(this.props.categorySelected);
-    console.log('selected activity: ');
-    console.log(this.props.activitySelected);
-    return (
-      <div className="activity-box">
-        This will be an activity.
-      </div>
-    );
   }
 }
 

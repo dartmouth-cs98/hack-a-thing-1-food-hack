@@ -10,13 +10,13 @@ class NavBar extends Component {
   }
 
   render() {
-    const aboutClassName = (this.props.path === '/about') ? 'menu-btn selected-menu-btn' : 'menu-btn';
-    const contactClassName = (this.props.path === '/contact') ? 'menu-btn selected-menu-btn' : 'menu-btn';
+    const aboutClassName = (this.props.path === '/about') ? 'nav-btn selected-nav-btn' : 'nav-btn';
+    const contactClassName = (this.props.path === '/contact') ? 'nav-btn selected-nav-btn' : 'nav-btn';
     const loginClassName = (this.props.path === '/login') ? 'login-btn selected-login-btn' : 'login-btn';
-    const activityClassName = (this.props.path === '/' || this.props.gradeSelected) ? 'menu-btn selected-menu-btn' : 'menu-btn';
+    const activityClassName = (this.props.path === '/' || this.props.gradeSelected) ? 'nav-btn selected-nav-btn' : 'nav-btn';
     return (
       <div className="nav-container">
-        <div className="menu-container">
+        <div className="nav-menu-container">
           <Link to="/" className={activityClassName} >ACTIVITIES</Link>
           <Link to="/about" className={aboutClassName} >ABOUT</Link>
           <Link to="/contact" className={contactClassName} >CONTACT</Link>

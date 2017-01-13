@@ -36,7 +36,7 @@ render((
       <Route path="/login" component={Login} />
       <Route path="/:gradeSelected" component={Home} />
       <Route path="/:gradeSelected/:categoryId" component={Home} />
-      <Route path="/:gradeSelected/:categoryId/:activitySelected" component={Home} />
+      <Route path="/:gradeSelected/:categoryId/:activityId" component={Home} />
     </Route>
   </Router>
 ), document.getElementById('main'));

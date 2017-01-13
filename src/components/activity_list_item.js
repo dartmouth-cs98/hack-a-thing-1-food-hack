@@ -6,10 +6,10 @@ const ActivityListItem = (props) => {
   const currentClass = (props.activitySelected === props.activity) ? 'selected-activity activity-item' : 'activity-item';
   let linkUrl = '/'.concat(props.gradeSelected);
   linkUrl = linkUrl.concat('/').concat(props.categorySelected.id);
-  linkUrl = linkUrl.concat('/').concat(props.activity);
+  linkUrl = linkUrl.concat('/').concat(props.activity.id);
   return (
     <li className={currentClass} onClick={() => { browserHistory.push(linkUrl); }}>
-      {props.activity}
+      {props.activity.name}
     </li>
   );
 };

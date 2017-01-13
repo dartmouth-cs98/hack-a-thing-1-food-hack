@@ -1,7 +1,7 @@
 // Constants
 $grade-select-size: 200px;
-$cat-width: 200px;
-$nav-bar-width: 80px;
+$cat-width: 20%;
+$nav-bar-height: 100px;
 $nav-grey: #f1f1f1;
 $menu_spacing: 50px;
 $selected-category-color: #555;
@@ -65,30 +65,45 @@ body {
   padding: 0;
 }
 
-.menu-btn {
+.app-container {
+  background-image: url('/assets/grade_selection/Grade_Selection_UI_background.png');
+  background-size: cover;
+  height: 100%;
+}
+
+// Navigation Menu Assets
+.nav-container {
+  height: $nav-bar-height;
+  width: 100%;
+  background-color: transparent;
+  @include flex-align-end;
+  @include flex-vertical-align-center;
+}
+
+.nav-btn {
   text-decoration: none;
   display: inline-block;
   margin-right: $menu_spacing;
   padding-bottom: 5px;
-  font-size: 16.67px;
+  font-size: 13px;
 
   &:hover {
     text-decoration: none;
   }
 }
 
-.selected-menu-btn {
+.selected-nav-btn {
   border-bottom: solid 3px;
   font-weight: bold;
 }
 
-.menu-container {
-  .menu-btn {
+.nav-menu-container {
+  .nav-btn {
     color: white;
   }
 
   &:hover {
-    .menu-btn {
+    .nav-btn {
       color: $nav-grey;
       border-bottom: 0;
       font-weight: normal;
@@ -99,43 +114,10 @@ body {
       }
     }
 
-    .selected-menu-btn:hover {
+    .selected-nav-btn:hover {
       border-bottom: solid 3px;
     }
   }
-}
-
-.app-container {
-  background-image: url('/assets/grade_selection/Grade_Selection_UI_background.png');
-  background-size: cover;
-  height: 100%;
-}
-
-.grade-selection-title {
-  text-align: center;
-  padding-top: 120px;
-  padding-bottom: 50px;
-  img {
-    max-width: 790px;
-    width: 100%;
-  }
-}
-
-.nav-container {
-  height: $nav-bar-width;
-  width: 100%;
-  background-color: transparent;
-  @include flex-align-end;
-  @include flex-vertical-align-center;
-}
-
-.grade-btn-container {
-  width: 100%;
-  @include flex-space-around;
-}
-
-.grade-range-img {
-  width: $grade-select-size;
 }
 
 .login-img {
@@ -146,6 +128,31 @@ body {
   margin-right: 50px;
 }
 
+// Grade Selection Assets
+.grade-selection-title {
+  text-align: center;
+  padding-top: 120px;
+  padding-bottom: 50px;
+  img {
+    max-width: 790px;
+    width: 100%;
+  }
+}
+
+.grade-btn-container {
+  width: 100%;
+  @include flex-space-around;
+}
+
+.grade-range-btn {
+  width: 20%;
+}
+
+.grade-range-img {
+  width: 100%;
+}
+
+// Category Menu Assets
 .cat-row {
   width: 100%;
   display: block;
@@ -154,6 +161,7 @@ body {
 
 .cat-btn {
   width: $cat-width;
+  min-width: 190px;
   text-align: center;
   border: 1px solid #000;
 }
@@ -162,8 +170,11 @@ body {
   background-color: $selected-category-color;
 }
 
+// Activity List Assets
 .activity-list {
   float: right;
+  width: $cat-width;
+  padding: 0;
   @include vertical-flex;
 }
 
@@ -171,7 +182,7 @@ body {
   list-style: none;
   cursor: pointer;
   border: 1px solid #000;
-  width: $cat-width;
+  width: 100%;
   text-align: center;
   height: 2.5em;
   vertical-align: center;
@@ -179,6 +190,18 @@ body {
 
 .selected-activity {
   background-color: $selected-activity-color;
+}
+
+// Activity Screen Assets
+.activity-view {
+  display: inline-block;
+  width: 100% - $cat-width;
+}
+
+.activity-frame {
+  border: 0;
+  width: 100%;
+  height: 450px;
 }
 
 .hidden {

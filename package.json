@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --inline --hot --port 3000 --history-api-fallback",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
     "lint": "eslint src/"
   },
   "author": "",
@@ -37,6 +38,7 @@
   },
   "dependencies": {
     "jquery": "^3.1.1",
+    "p5": "^0.5.4",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-router": "^2.8.1"
