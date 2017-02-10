@@ -14,16 +14,15 @@ class NavBar extends Component {
     const contactClassName = (this.props.path === '/contact') ? 'nav-btn selected-nav-btn' : 'nav-btn';
     const loginClassName = (this.props.path === '/login') ? 'login-btn selected-login-btn' : 'login-btn';
     const activityClassName = (this.props.path === '/' || this.props.gradeSelected) ? 'nav-btn selected-nav-btn' : 'nav-btn';
+    const navClassName = (!this.props.activityId) ? 'nav-container' : 'nav-container hidden';
     return (
-      <div className="nav-container">
+      <div className={navClassName}>
         <div className="nav-menu-container">
           <Link to="/" className={activityClassName} >ACTIVITIES</Link>
           <Link to="/about" className={aboutClassName} >ABOUT</Link>
           <Link to="/contact" className={contactClassName} >CONTACT</Link>
         </div>
-        <Link to="/login" className={loginClassName} >
-          <img className="login-img" src="/assets/LOGIN_button.png" alt="Error" />
-        </Link>
+        <Link to="/login" className={loginClassName} >LOGIN</Link>
       </div>
     );
   }

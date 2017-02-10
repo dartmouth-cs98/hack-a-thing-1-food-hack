@@ -19,8 +19,12 @@ import Login from './components/login';
 
 const App = (props) => {
   return (
-    <div className="app-container">
-      <NavBar path={props.location.pathname} gradeSelected={props.params.gradeSelected} />
+    <div className={(!props.params.gradeSelected) ? 'grade-selection-container' : 'app-container'}>
+      <NavBar
+        path={props.location.pathname}
+        gradeSelected={props.params.gradeSelected}
+        activityId={props.params.activityId}
+      />
       {props.children}
     </div>
   );

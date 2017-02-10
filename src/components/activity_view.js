@@ -5,18 +5,22 @@ class ActivityView extends Component {
   constructor(props) {
     super(props);
 
-    this.chooseCategoryText = 'Please choose a category';
-    this.chooseActivityText = 'Please choose an activity';
+    this.chooseCategory = (
+      <div className="activity-view category-not-selected">
+        <img className="pick-category" src="/assets/pick_category.png" alt="Please choose a category" />
+      </div>
+    );
+    this.chooseActivity = (
+      <div className="activity-view activity-not-selected">
+        <img className="pick-activity" src="/assets/pick_activity.png" alt="Please choose an activity" />
+      </div>
+    );
   }
   render() {
     if (!this.props.categorySelected) {
-      return (
-        <div className="activity-view category-not-selected"> {this.chooseCategoryText} </div>
-      );
+      return this.chooseCategory;
     } else if (!this.props.activitySelected) {
-      return (
-        <div className="activity-view activity-not-selected"> {this.chooseActivityText} </div>
-      );
+      return this.chooseActivity;
     } else {
       console.log('selectedCategory:');
       console.log(this.props.categorySelected);

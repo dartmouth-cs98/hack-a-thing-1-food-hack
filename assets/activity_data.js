@@ -3,70 +3,88 @@ const activityData = {
     name: 'Autism',
     id: 'autism',
     activities: {
-      aspergers: {
-        name: 'Aspergers',
-        id: 'aspergers',
+      1: {
+        name: 'Activity 1',
+        id: 1,
       },
-      // 'PDD\'s',
-      // 'Austism Spectrum',
+      2: {
+        name: 'Activity 2',
+        id: 2,
+      },
+      3: {
+        name: 'Activity 3',
+        id: 3,
+      },
     },
   },
   hearing: {
-    name: 'Hearing Loss/Deafness',
+    name: 'Hearing Loss',
     id: 'hearing',
     activities: {
-      deafness: {
-        name: 'Deafness',
-        id: 'deafness',
+      1: {
+        name: 'Activity 1',
+        id: 1,
       },
-      // 'Hearing Impaired',
-      // 'Deaf as a result of illness',
-      // 'Deaf as a result of age',
+      2: {
+        name: 'Activity 2',
+        id: 2,
+      },
     },
   },
-  visual: {
-    name: 'Visual Impairments/Blindness',
-    id: 'visual',
+  blindness: {
+    name: 'Blindness',
+    id: 'blindness',
     activities: {
-      colorblindness: {
-        name: 'Color Blindness',
-        id: 'colorblindness',
+      1: {
+        name: 'Activity 1',
+        id: 1,
       },
-      // 'Glaucoma',
-      // 'Blindness as a result of age',
-      // 'Cataracts',
-      // 'Blindness',
-      // 'Near Sightedness',
     },
   },
   learning: {
-    name: 'Learning Disabilities',
+    name: 'Learning Disability',
     id: 'learning',
     activities: {
-      adhd: {
-        name:'ADD/ADHD',
-        id:'adhd',
+      1: {
+        name: 'Activity 1',
+        id: 1,
       },
-      dyslexia: {
-        name: 'Dyslexia',
-        id: 'dyslexia',
+      2: {
+        name: 'Activity 2',
+        id: 2,
       },
-      memory: {
-        name: 'Memory Processing',
-        id: 'memory',
+      3: {
+        name: 'Activity 3',
+        id: 3,
       },
-      dyscalculia: {
-        name: 'Dyscalculia',
-        id: 'dyscalculia',
+      4: {
+        name: 'Activity 4',
+        id: 4,
       },
-      dysgraphia: {
-        name: 'Dysgraphia',
-        id: 'dysgraphia',
+      5: {
+        name: 'Activity 5',
+        id: 5,
+      },
+      6: {
+        name: 'Activity 6',
+        id: 6,
+      },
+      7: {
+        name: 'Activity 7',
+        id: 7,
+      },
+      8: {
+        name: 'Activity 8',
+        id: 8,
+      },
+      9: {
+        name: 'Activity 9',
+        id: 9,
       },
     },
   },
   physical: {
-    name: 'Physical Disabilities',
+    name: 'Physical Disability',
     id: 'physical',
     activities: {
       drawline: {
@@ -74,67 +92,52 @@ const activityData = {
         id: 'drawline',
         url: '/assets/activities/draw_line.html',
       },
-      // 'Cerebral Palsy',
-      // 'Disability from an injury',
-      // 'Amputation',
-      // 'Stroke',
-      // 'Traumatic Brain Injury (TBI)',
-      // 'Muscular Dystrophy',
-      // 'Birth Defect',
     },
   },
   social: {
-    name: 'Social/Emotional Disabilities',
+    name: 'Social Disability',
     id: 'social',
     activities: {
-      ebd: {
-        name: 'EBD',
-        id: 'ebd',
+      1: {
+        name: 'Activity 1',
+        id: 1,
       },
-      ptsd: {
-        name: 'Post Traumatic Stress Disorder',
-        id: 'ptsd',
+      2: {
+        name: 'Activity 2',
+        id: 2,
       },
-      occ: {
-        name: 'OCC',
-        id: 'occ',
+      3: {
+        name: 'Activity 3',
+        id: 3,
       },
-      ocd: {
-        name: 'Obsessive Compulsive Disorder',
-        id: 'ocd',
+      4: {
+        name: 'Activity 4',
+        id: 4,
       },
-      depression: {
-        name: 'Depression',
-        id: 'depression',
+      5: {
+        name: 'Activity 5',
+        id: 5,
       },
     },
   },
-  speech: {
-    name: 'Speech and Language',
-    id: 'speech',
+  language: {
+    name: 'Language',
+    id: 'language',
     activities: {
-      delay: {
-        name: 'Speech Delay',
-        id: 'delay',
+      1: {
+        name: 'Activity 1',
+        id: 1,
       },
-      // 'Speech Impediment',
-      // 'Lisp',
-      // 'Stuttering',
-      // 'Articulation challenge',
     },
   },
   cognitive: {
-    name: 'Cognitive Development',
+    name: 'Cognitive Delays',
     id: 'cognitive',
     activities: {
-      downs: {
-        name: 'Downs Syndrome',
-        id: 'downs',
+      1: {
+        name: 'Activity 1',
+        id: 1,
       },
-      // 'Fetal Alcohol Syndrome',
-      // 'Developmental Delay',
-      // 'Stroke',
-      // 'Dyspraxia',
     },
   },
 };

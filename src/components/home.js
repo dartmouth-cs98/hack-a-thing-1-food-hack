@@ -20,10 +20,9 @@ class Home extends Component {
   render() {
     const gradeSelected = this.props.params.gradeSelected;
     const categorySelected = this.activityData[this.props.params.categoryId];
-    // const activityId = (this.props.routes.length !== 3) ? null : (!this.props.params.splat) ? this.props.routes[2].path : this.props.params.splat;
-    // const activitySelected = (!categorySelected) ? null : categorySelected.activities[activityId];
     const activityId = this.props.params.activityId;
     const activitySelected = (categorySelected) ? categorySelected.activities[activityId] : null;
+    const bodyClassName = (!activitySelected) ? 'body-container' : 'body-container activity-container';
     return (
       <div className="home-container">
         <CategoryList
@@ -31,17 +30,19 @@ class Home extends Component {
           categories={this.activityData}
           categorySelected={categorySelected}
         />
-        <ActivityView
-          gradeSelected={gradeSelected}
-          categorySelected={categorySelected}
-          activitySelected={activitySelected}
-        />
-        <ActivityList
-          gradeSelected={gradeSelected}
-          categorySelected={categorySelected}
-          activitySelected={activitySelected}
-        />
-        {this.props.children}
+        <div className={bodyClassName}>
+          <ActivityList
+            gradeSelected={gradeSelected}
+            categorySelected={categorySelected}
+            activitySelected={activitySelected}
+          />
+          <ActivityView
+            gradeSelected={gradeSelected}
+            categorySelected={categorySelected}
+            activitySelected={activitySelected}
+          />
+          {this.props.children}
+        </div>
       </div>
     );
   }
